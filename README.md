@@ -1,4 +1,4 @@
-# ☄️Comet-Messenger
+# ☄️Comet Messenger
 A simple realtime messaging app built with svelte and socket.io
 
 # 💻Client
