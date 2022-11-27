@@ -12,7 +12,7 @@
     // Declare the variables
     // -----------------------------
 
-    let outbox;
+    let outbox = "";
     let username;
     $: color = "#ffffff";
     let connected = false
@@ -136,7 +136,11 @@
             
             <div class="chat-box">
                 <input type="text" placeholder="chat message ..." bind:value={ outbox }>
-                <button on:click={ SendMessage } >Send >></button>
+                <button class="send-button" on:click={ SendMessage } >
+                    <span class="material-symbols-rounded">
+                        send
+                    </span>
+                </button>
             </div>
         </div>
         
@@ -169,8 +173,8 @@
         height: 80vh;
         overflow: auto;
         border-radius: 20px;
-        background-color: #5e5e5e53;
-        backdrop-filter: blur(8px);
+        background-color: #1a1a1a;
+        backdrop-filter: blur(30px);
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     }
 
@@ -293,4 +297,38 @@
     }
 
     
+    .chat-box input {
+        border: none;
+        background-color: #4a4a4a;
+        color: white;
+        padding: 10px;
+        padding-left: 20px;
+        border-radius: 20px;
+        font-size: large;
+        width: 90%;
+    }
+
+    .chat-box input:focus {
+        outline: none;
+    }
+
+    .chat-box .send-button {
+        font-size: large;
+        border: none;
+        background-color: #4a4a4a;
+        color: white;
+        margin-top: 0px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        width: 8%;
+        cursor: pointer;
+    }
+
+    .chat-box .material-symbols-rounded {
+        font-family: 'Material Symbols Rounded';
+        position: relative;
+        top: 3px;
+        left: 5px;
+    }
 </style>

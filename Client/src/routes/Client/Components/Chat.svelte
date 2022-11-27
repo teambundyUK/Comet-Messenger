@@ -18,7 +18,7 @@
                 <div class="disconnect-message"><b style="color: red;">{ message.senderID }: </b> disconnected from the server</div>
                 <br>
             {:else if message.type === "connect"}
-                <div class="connect-message"><b style="color: green;">{ message.senderID }: </b> connected to the server</div>
+                <div style="color: white;" class="connect-message"><b style="color: green;">{ message.senderID }: </b> connected to the server</div>
                 <br>
             {:else if message.type === "You"}
                 <div class="self-message" style="color: { message.senderColor };">
