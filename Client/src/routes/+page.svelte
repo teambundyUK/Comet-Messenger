@@ -1,7 +1,7 @@
 <script>
-    import Client from "./Client/Client.svelte";
+	import Client from './Client/Client.svelte';
 </script>
 
 <main>
-    <Client />
+	<Client />
 </main>
