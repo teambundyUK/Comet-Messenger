@@ -133,7 +133,17 @@
 			</div>
 
 			<div class="chat-box">
-				<input type="text" placeholder="chat message ..." bind:value={outbox} />
+				<input
+					type="text"
+					placeholder="chat message ..."
+					maxlength="100"
+					bind:value={outbox}
+					on:keydown={(event) => {
+						if (event.key === 'Enter') {
+							SendMessage();
+						}
+					}}
+				/>
 				<button class="send-button" on:click={SendMessage}>
 					<span class="material-symbols-rounded"> send </span>
 				</button>
@@ -164,7 +174,7 @@
 	.chat-area {
 		margin-top: 10px;
 		width: 100%;
-		height: 80vh;
+		height: 70vh;
 		overflow: auto;
 		border-radius: 20px;
 		background-color: #1a1a1a;
@@ -178,7 +188,8 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-image: url(./waves.svg);
+		/* background-image: url(./waves.svg); */
+		background-color: #2a2a2a;
 		background-size: cover;
 		padding: 20px;
 		box-sizing: border-box;
